@@ -19,14 +19,17 @@
 
 클론된 디렉토리 -> vagrant/install로 이동
 
-** 클론된 디렉토리의 Vagrantfile, ssh_config.sh, Vagrantfile_Ubuntu 복사 후 만든 디렉토리에 덮어쓰기 **
+* 클론된 디렉토리의 Vagrantfile, ssh_config.sh, Vagrantfile_Ubuntu 복사 후 만든 디렉토리에 덮어쓰기
 
 
 ```
 [root@centos7] vagrant up
 ```
 
+
 --------------------------
+
+
 
 ## 2. 서버 사전준비 - Master, Node 모두
 
@@ -49,12 +52,15 @@ Permissive //경고만한다
 ```
 
 
+
 * 방화벽 해제
 ```
 [root@centos7] systemctl status firewalld
 [root@centos7] systemctl stop firewalld && systemctl disable firewalld
 [root@centos7] systemctl stop NetworkManager && systemctl disable NetworkManager
 ```
+
+
 
 * swap 비활성화 & Iptables 커널 옵션 활성화
 ```
@@ -84,7 +90,7 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cl
 EOF
 ```
 
-* Centos UPdate
+* Centos Update
 ```
 [root@centos7] yum update
 ```
@@ -197,14 +203,14 @@ disabled_plugins = ["cri"]
 
 ```
 
-# Node 에서 아래 명령어 실행
+## Node 에서 아래 명령어 실행
 ```
 kubeadm join 192.168.56.10:6443 --token x1qogf.3i1d8zc267sm4gq8 \
 --discovery-token-ca-cert-hash sha256:1965b56832292d3de10fc95f92b8391334d9404c914d407baa2b6cec1dbe5322
 ```
 
 
-## Master에서 실행시 Running상태 확인
+### Master에서 실행시 Running상태 확인
 * 환경변수 설정
 ```
 [root@centos7] mkdir -p $HOME/.kube
@@ -241,4 +247,4 @@ kubeadm join 192.168.56.10:6443 --token x1qogf.3i1d8zc267sm4gq8 \
 
 
 ------------
-### K8s 테스트
+## K8s 테스트
