@@ -112,7 +112,7 @@ EOF
 
 --------------------------
 
-## Docker 설치, 실행 - Master, Node 모두
+## 3. Docker 설치, 실행 - Master, Node 모두
 
 ```
 [root@centos7] yum install -y yum-utils device-mapper-persistent-data lvm2 
@@ -146,6 +146,11 @@ EOF
 	 docker-compose version 1.24.1, build 4667896b
 
 ```
+-----
+
+## 4. Kubernetes 설치방법
+
+
 
 * Kubernetes 설치 - Master, Node 모두
 
@@ -203,7 +208,7 @@ disabled_plugins = ["cri"]
 
 ```
 
-## Node 에서 아래 명령어 실행
+### Node 에서 아래 명령어 실행
 ```
 kubeadm join 192.168.56.10:6443 --token x1qogf.3i1d8zc267sm4gq8 \
 --discovery-token-ca-cert-hash sha256:1965b56832292d3de10fc95f92b8391334d9404c914d407baa2b6cec1dbe5322
@@ -247,4 +252,4 @@ kubeadm join 192.168.56.10:6443 --token x1qogf.3i1d8zc267sm4gq8 \
 
 
 ------------
-## K8s 테스트
+## 5. Kubernetes 테스트
